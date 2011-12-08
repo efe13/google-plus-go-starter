@@ -1,0 +1,59 @@
+Running the Google+ Go Starter Project for App Engine (on Linux and Mac)
+------------------------------------------------------------------------
+
+0. You'll need to have Python (at http://python.org/) and Mercurial
+  (at http://mercurial.selenic.com/) installed.
+
+  You'll also need to have activated access to the Google+ APIs and updated the
+  appengine/app/api/config.json file with your values from
+  https://code.google.com/apis/console > "API Access". See the top-level README
+  for more details.
+
+1. Download and install the Google App Engine SDK for Go (at
+  http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Go).
+  Don't forget to add the google_appengine/ directory to your $PATH.
+
+2. In a Terminal, cd into the appengine/ directory (the directory where this
+  README file lives):
+
+    > cd appengine/
+
+3. This project depends on the goauth2 (at http://code.google.com/p/goauth2/)
+  and google-api-go-client (at http://code.google.com/p/google-api-go-client/)
+  Go libraries. To use them on Google App Engine, download them to the
+  appengine/ directory:
+
+    (From the appengine/ directory)
+    > mkdir goauth2.googlecode.com
+    > hg clone https://code.google.com/p/goauth2 goauth2.googlecode.com/hg
+    > mkdir google-api-go-client.googlecode.com
+    > hg clone https://code.google.com/p/google-api-go-client google-api-go-client.googlecode.com/hg
+
+4a. This project also depends on the
+  google-plus-go-starter.googlecode.com/hg/noauth package. If you cloned the
+  entire Google Code repository (at
+  https://code.google.com/p/google-plus-go-starter/), the noauth package is
+  included. You can simply symlink to it:
+
+    (From the appengine/ directory)
+    > mkdir -p google-plus-go-starter.googlecode.com/hg
+    > ln -s ../../../noauth google-plus-go-starter.googlecode.com/hg/noauth
+
+4b. Otherwise, if you do not have the noauth package locally (e.g. if you only
+  cloned the appengine/ directory from the Google Code repository), you can
+  just download the noauth package to the appengine/ directory:
+
+    (From the appengine/ directory)
+    > mkdir -p google-plus-go-starter.googlecode.com/hg
+    > hg clone https://code.google.com/p/google-api-go-client/noauth google-api-go-client.googlecode.com/hg/noauth
+
+5. Run the App Engine development server:
+
+    (From the appengine/ directory)
+    > dev_appserver.py .
+
+6. Visit http://localhost:8080/ in a browser.
+
+---------------------------------------------------------------------------------------
+Having problems? You find help at http://groups.google.com/group/google-plus-developers
+

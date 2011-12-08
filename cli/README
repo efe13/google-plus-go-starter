@@ -1,0 +1,32 @@
+Running the Google+ Go Starter Project for command-line (on Linux and Mac)
+--------------------------------------------------------------------------
+
+0. You'll need to have activated access to the Google+ APIs and updated the
+  cli/api/config.json file with your values from
+  https://code.google.com/apis/console > "API Access". See the top-level README
+  for more details.
+
+1. Download and install Go (at http://golang.org/). Don't forget to add
+  $GOROOT/bin to your $PATH.
+
+2. In a Teminal, cd into the top-level directory (ABOVE the directory where this
+  README file lives):
+
+    > ls
+    appengine cli COPYING noauth README
+
+3. Use goinstall (http://golang.org/cmd/goinstall) to build the executable:
+
+    > export GOPATH=`pwd`
+    > mkdir -p src/google-plus-go-starter.googlecode.com
+    > ln -s ../.. src/google-plus-go-starter.googlecode.com/hg
+    > goinstall google-plus-go-starter.googlecode.com/hg/cli
+
+4. Run the executable (it lives in the newly created bin/ directory):
+
+    > chmod u+x bin/cli
+    > bin/cli --help
+
+---------------------------------------------------------------------------------------
+Having problems? You find help at http://groups.google.com/group/google-plus-developers
+

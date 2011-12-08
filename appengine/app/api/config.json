@@ -1,0 +1,14 @@
+{
+	"APIKey": "<YOUR API KEY>",
+	"OAuthConfig": {
+		"ClientId":     "<YOUR CLIENT ID>",
+		"ClientSecret": "<YOUR CLIENT SECRET>",
+		"Scope":        "https://www.googleapis.com/auth/plus.me",
+		"AuthURL":      "https://accounts.google.com/o/oauth2/auth",
+		"TokenURL":     "https://accounts.google.com/o/oauth2/token"
+	},
+	"OAuthRedirectPath": "/oauth2callback",
+	"DevRootURL": "http://localhost:8080",
+	"ProdRootURL": "https://<YOUR APP ID>.appspot.com"
+}
+

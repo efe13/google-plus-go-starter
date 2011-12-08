@@ -1,0 +1,65 @@
+Google+ Go Starter Project
+--------------------------
+
+This project shows you how to create applications in Go that use the Google+
+APIs.
+
+You can use the provided subprojects (Go apps for Google App Engine and the
+command-line) as a foundation for your own applications so you can experiment
+right away, without worrying about how everything works in detail (e.g. OAuth2).
+
+
+Getting Started
+---------------
+
+Register a new project and activate Google+ API access:
+  - Visit https://code.google.com/apis/console/
+  - If you don't already have a project, click "Create project..."
+  - In the "Services" section, activate access to the "Google+ API"
+  - In the "API Access" section (navigate to it from the left column), click
+    "Create an OAuth 2.0 client ID..."
+  - Enter a "Product name" and click "Next"
+  - Depending on whether you want to run the Google App Engine app or
+    command-line app, choose the "Application type" to be "Web application" or
+    "Installed application". You can set up the other type of application
+    later
+    - If you want to run the App Engine app, choose the "Application type" to be
+      "Web application". For "Your site or hostname", select "http://" as the
+      protocol and put "localhost:8080" as the domain name
+    - If you want to run the command-line app, choose the "Application type" to
+      be "Installed application"
+  - Click "Create client ID"
+  - If you want to run the other kind of app as well, click on "Create another
+    client ID"
+
+Copy the API Access configuration values:
+  - Visit https://code.google.com/apis/console/
+  - Navigate to the "API Access" section (from the left column)
+  - Copy the values for "Client ID", "Client secret" and "API key" to the
+    correct "config.json" file(s):
+
+      - If you want to run the App Engine app, copy the values for "Client ID"
+        and "Client secret" in the "Client ID for web applications" box to the
+        appropriate places in the appengine/app/api/config.json file. Copy the
+        value for "API key" in the "Simple API Access" box to the appropriate
+        place in the appengine/app/api/config.json file.
+
+      - If you want to run the command-line app, copy the values for
+        "Client ID" and "Client secret" in the "Client ID for installed
+        applications" box to the appropriate places in the cli/api/config.json
+        file. Copy the value for "API key" in the "Simple API Access" box to the
+        appropriate place in the cli/api/config.json file.
+
+Build and run the app:
+  - For the App Engine app, follow the directions in appengine/README
+  - For the command-line app, follow the directions in cli/README
+
+Useful Links
+------------
+
+  - Google+ APIs Reference: https://developers.google.com/+/api/
+  - Google+ Developers Discussion: http://groups.google.com/group/google-plus-developers
+  - OAuth2 Explanation: http://code.google.com/apis/accounts/docs/OAuth2.html
+  - Google APIs Console: https://code.google.com/apis/console/
+  - App Engine Go Overview: http://code.google.com/appengine/docs/go/overview.html
+
