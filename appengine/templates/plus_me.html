@@ -21,12 +21,20 @@
   <section id="introduction">
     <h1>Plus.Me</h1>
     <p>
-      {{/* TODO(danielphan): Add a real intro */}}
-      Lorem ipsum dolor sit amet...
+      If you want to get the current user's public profile, you can write:
+      <code>
+        userProfile, err := p.People.Get("me").Do()
+      </code>
+    </p>
+    <p>
+      The special value &quot;me&quot; is used instead of a profile ID and
+      refers to the current user. Associating the current user with their
+      profile by using the &quot;me&quot; value requires OAuth authorization
+      from the user with the <em>plus.me</em> scope.
     </p>
   </section>
   
-  <section id="me">
+  <section id="me" class="example">
     <h1 class="name"><a href="{{.me.Url | html}}">{{.me.DisplayName | html}}</a></h1>
     <img class="image" src="{{.me.Image.Url | html}}" width="50" height="50" />
     <p class="about">{{.me.AboutMe | html}}</p>

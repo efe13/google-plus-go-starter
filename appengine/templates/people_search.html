@@ -21,34 +21,42 @@
   <section id="introduction">
     <h1>People.Search</h1>
     <p>
-      {{/* TODO(danielphan): Add a real intro */}}
-      Lorem ipsum dolor sit amet...
+      You can look for all public Google+ profiles that match a certain keyword:
+      <code>
+        people, err := p.People.Search("Larry").Do()
+      </code>
+    </p>
+    <p>
+      Again, the user doesn't have to authorize your application to search for
+      people. Your app simply specifies the query and your API key.
     </p>
   </section>
 
-  <header>
-    <form method="GET" action="">
-      <input type="text" name="query" value="{{.query | html}}" placeholder="e.g. Chuck Testa" />
-      <input type="submit" value="Search" />
-    </form>
-  </header>
+  <div class="example">
+    <header>
+      <form method="GET" action="">
+        <input type="text" name="query" value="{{.query | html}}" placeholder="e.g. Chuck Testa" />
+        <input type="submit" value="Search" />
+      </form>
+    </header>
 
-  {{if .query}}
-    {{if .people}}
-      <ul class="people">
-        {{range .people}}
-        <li class="person">
-          <h1 class="name"><a href="{{.Url | html}}">{{.DisplayName | html}}</a></h1>
-          <img src="{{.Image.Url | html}}" width="50" height="50" alt="{{.DisplayName | html}}'s Profile Image" title="{{.DisplayName | html}}"/>
-        </li>
-        {{end}}
-      </ul>
+    {{if .query}}
+      {{if .people}}
+        <ul class="people">
+          {{range .people}}
+          <li class="person">
+            <h1 class="name"><a href="{{.Url | html}}">{{.DisplayName | html}}</a></h1>
+            <img src="{{.Image.Url | html}}" width="50" height="50" alt="{{.DisplayName | html}}'s Profile Image" title="{{.DisplayName | html}}"/>
+          </li>
+          {{end}}
+        </ul>
+      {{else}}
+        <p>Couldn't find anyone matching <q>{{.query | html}}</q>.</p>
+      {{end}}
     {{else}}
-      <p>Couldn't find anyone matching <q>{{.query | html}}</q>.</p>
+      <p>Enter a query to find people.</p>
     {{end}}
-  {{else}}
-    <p>Enter a query to find people.</p>
-  {{end}}
+  </div>
 </div>
 
 {{template "_bottom.html"}}

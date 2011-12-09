@@ -6,26 +6,44 @@ Running the Google+ Go Starter Project for command-line (on Linux and Mac)
   https://code.google.com/apis/console > "API Access". See the top-level README
   for more details.
 
-1. Download and install Go (at http://golang.org/). Don't forget to add
-  $GOROOT/bin to your $PATH.
+1. Download and install Go (at http://golang.org/). Make sure to add $GOROOT/bin
+  to your $PATH. If you're using bash and Go is installed in the ~/go directory,
+  you can add it to your $PATH by doing:
+
+    > # You can also use ~/.bash_profile instead of ~/.bashrc for these commands.
+    > echo '# Go Environment' >> ~/.bashrc
+    > echo 'export GOROOT=$HOME/go' >> ~/.bashrc
+    > echo 'export GOBIN=$GOROOT/bin' >> ~/.bashrc
+    > echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
+    > source ~/.bashrc
 
 2. In a Teminal, cd into the top-level directory (ABOVE the directory where this
   README file lives):
 
+    > cd google-plus-go-starter/
     > ls
     appengine cli COPYING noauth README
 
-3. Use goinstall (http://golang.org/cmd/goinstall) to build the executable:
+3. Use goinstall (documentation at http://golang.org/cmd/goinstall) to build the
+  executable:
 
+    > # Have goinstall use this directory as a parallel Go source tree.
     > export GOPATH=`pwd`
+    > # Make this directory look like a Go source tree.
     > mkdir -p src/google-plus-go-starter.googlecode.com
     > ln -s ../.. src/google-plus-go-starter.googlecode.com/hg
+    > # Build and "install" the executable into the bin/ directory.
     > goinstall google-plus-go-starter.googlecode.com/hg/cli
+    > ls
+    appengine bin cli COPYING goinstall.log noauth pkg README src
 
-4. Run the executable (it lives in the newly created bin/ directory):
+4. Run the executable:
 
-    > chmod u+x bin/cli
-    > bin/cli --help
+    > # You might need to run `chmod u+x bin/cli` first.
+    > bin/cli -help
+    > # You have to update the values in cli/api/config.json before running the executable.
+    > # See the top-level README for more details.
+    > bin/cli -configPath=cli/api/config.json
 
 ---------------------------------------------------------------------------------------
 Having problems? You find help at http://groups.google.com/group/google-plus-developers

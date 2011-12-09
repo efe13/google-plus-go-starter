@@ -21,12 +21,20 @@
   <section id="introduction">
     <h1>Activities.Get</h1>
     <p>
-      {{/* TODO(danielphan): Add a real intro */}}
-      Lorem ipsum dolor sit amet...
+      Using the Google+ APIs, you can fetch public activities by specifying
+      their IDs:
+      <code>
+        activity, err := p.Activities.Get("z12gtjhq3qn2xxl2o224exwiqruvtda0i").Do()
+      </code>
+    </p>
+    <p>
+      The user doesn't have to authorize your application in order to fetch
+      public activities. Your app simply specifies the activity ID and your API
+      key. The source code for this application can show you how.
     </p>
   </section>
 
-  <article id="activity">
+  <article id="activity" class="example">
     <header>
       <p class="author">Author:
         <a href="{{.activity.Actor.Url | html}}">
