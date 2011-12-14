@@ -25,7 +25,7 @@ Running the Google+ Go Starter Project for App Engine (on Linux and Mac)
 
     > cd google-plus-go-starter/appengine/
     > ls
-    app app.yaml BUILD README static templates
+    app app.yaml README static templates
 
 3. This project depends on the goauth2 (at http://code.google.com/p/goauth2/)
   and google-api-go-client (at http://code.google.com/p/google-api-go-client/)
