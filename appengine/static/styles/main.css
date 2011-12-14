@@ -17,6 +17,7 @@
 body {
   margin: auto;
   max-width: 70em;
+  padding: 1em;
 }
 
 header {
@@ -39,5 +40,47 @@ header nav ul {
 
 header nav li {
   display: inline;
+}
+
+.example {
+  background-color: #D6E9F8;
+  padding: 0.5em;
+}
+
+.example h2 {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.example ul, .example ol {
+  padding-left: 0;
+}
+
+.example li {
+  display: block;
+}
+
+.person {
+  overflow: auto;
+  background-color: #F3F8FD;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+}
+
+.person:last-child {
+  margin-bottom: 0;
+}
+
+.person img {
+  float: left;
+  margin-right: 0.25em;
+}
+
+.person h1 {
+  display: inline;
+}
+
+.person p {
+  margin: 0 inherit;
 }
 

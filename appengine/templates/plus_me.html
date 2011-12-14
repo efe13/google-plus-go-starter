@@ -33,12 +33,15 @@
       from the user with the <em>plus.me</em> scope.
     </p>
   </section>
-  
-  <section id="me" class="example">
-    <h1 class="name"><a href="{{.me.Url | html}}">{{.me.DisplayName | html}}</a></h1>
-    <img class="image" src="{{.me.Image.Url | html}}" width="50" height="50" />
-    <p class="about">{{.me.AboutMe | html}}</p>
-  </section>
+
+  <div class="example">
+    <h2>Example</h2>
+    <section class="person">
+      <h1 class="name"><a href="{{.me.Url | html}}">{{.me.DisplayName | html}}</a></h1>
+      <img class="image" src="{{.me.Image.Url | html}}" width="50" height="50" />
+      <p class="about">{{.me.AboutMe | html}}</p>
+    </section>
+  </div>
 </div>
 
 {{template "_bottom.html"}}

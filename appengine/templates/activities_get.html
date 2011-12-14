@@ -34,20 +34,18 @@
     </p>
   </section>
 
-  <article id="activity" class="example">
-    <header>
-      <p class="author">Author:
-        <a href="{{.activity.Actor.Url | html}}">
-          {{.activity.Actor.DisplayName | html}}
-        </a>
-      </p>
-      <p class="id">ID: <a href="{{.activity.Url | html}}">{{.activity.Id | html}}</a></p>
-    </header>
-    <p class="content">{{.activity.Object.Content | html}}</p>
-    <section class="attachment">{{$attachment := index .activity.Object.Attachments 0}}
-      <a href="{{$attachment.Url | html}}">{{$attachment.Url | html}}</a>
-    </section>
-  </article>
+  <div class="example">
+    <h2>Example</h2>
+    <article class="activity">
+      <header>
+          By <a href="{{.activity.Actor.Url | html}}"><strong>{{.activity.Actor.DisplayName | html}}</strong></a>
+          (<a href="{{.activity.Url | html}}">view in Google+</a>)
+      </header>
+      <p class="content">{{.activity.Object.Content | html}}</p>
+      {{$attachment := index .activity.Object.Attachments 0}}
+      <iframe class="attachment" src="{{$attachment.Embed.Url | html}}" width="640" height="385" frameborder="0" />
+    </article>
+  </div>
 </div>
 
 {{template "_bottom.html"}}
