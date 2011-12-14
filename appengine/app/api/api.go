@@ -103,7 +103,7 @@ func init() {
 	config.OAuthConfig.RedirectURL = redirectURL.String()
 
 	// Register the OAuth redirect URL handler.
-	http.HandleFunc(config.OAuthRedirectPath, oauthHandler)
+	http.HandleFunc(config.OAuthRedirectPath, requireUser(oauthHandler))
 }
 
 // requireUser is used to wrap HTTP request handlers to ensure that the user
