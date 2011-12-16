@@ -22,7 +22,7 @@ import (
 	"google-plus-go-starter.googlecode.com/hg/cli/api"
 )
 
-// PeopleSearch fetches and displays the user's public Google+ profile using
+// PlusMe fetches and displays the user's public Google+ profile using
 // authenticated (OAuth) API access.
 func PlusMe() os.Error {
 	// Get the *plus.Service.

@@ -1,14 +1,13 @@
 Running the Google+ Go Starter Project for command-line (on Linux and Mac)
 --------------------------------------------------------------------------
 
-0. You'll need to have activated access to the Google+ APIs and updated the
-  cli/api/config.json file with your values from
-  https://code.google.com/apis/console > "API Access". See the top-level README
-  for more details.
+1. Install Go. You can follow the instructions at
+  http://golang.org/doc/install.html#fetch.
 
-1. Download and install Go (at http://golang.org/). Make sure to add $GOROOT/bin
-  to your $PATH. If you're using bash and Go is installed in the ~/go directory,
-  you can add it to your $PATH by doing:
+2. Add your Go installation's bin/ directory to your $PATH.
+
+  If you're using bash and Go is installed in your home directory at ~/go, you
+  can add its bin/ directory to your $PATH by doing:
 
     > # You can also use ~/.bash_profile instead of ~/.bashrc for these commands.
     > echo '# Go Environment' >> ~/.bashrc
@@ -17,14 +16,14 @@ Running the Google+ Go Starter Project for command-line (on Linux and Mac)
     > echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
     > source ~/.bashrc
 
-2. In a Teminal, cd into the top-level directory (ABOVE the directory where this
-  README file lives):
+3. In a Teminal, cd into the google-plus-go-starter/ directory (ABOVE the
+  directory where this README file lives):
 
     > cd google-plus-go-starter/
     > ls
     appengine cli COPYING noauth README
 
-3. Use goinstall (documentation at http://golang.org/cmd/goinstall) to build the
+4. Use goinstall (documentation at http://golang.org/cmd/goinstall) to build the
   executable:
 
     > # Have goinstall use this directory as a parallel Go source tree.
@@ -37,14 +36,14 @@ Running the Google+ Go Starter Project for command-line (on Linux and Mac)
     > ls
     appengine bin cli COPYING goinstall.log noauth pkg README src
 
-4. Run the executable:
+5. Run the executable (you have to update the values in
+  google-plus-go-starter/cli/api/config.json before running the executable. See
+  the top-level README for more details):
 
     > # You might need to run `chmod u+x bin/cli` first.
     > bin/cli -help
-    > # You have to update the values in cli/api/config.json before running the executable.
-    > # See the top-level README for more details.
     > bin/cli -configPath=cli/api/config.json
 
----------------------------------------------------------------------------------------
-Having problems? You find help at http://groups.google.com/group/google-plus-developers
+--------------------------------------------------------------------------------------
+Having trouble? You find help at http://groups.google.com/group/google-plus-developers
 

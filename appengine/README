@@ -1,27 +1,28 @@
 Running the Google+ Go Starter Project for App Engine (on Linux and Mac)
 ------------------------------------------------------------------------
 
-0. You'll need to have Python (at http://python.org/) and Mercurial
-  (at http://mercurial.selenic.com/) installed.
+1. Install Python. You can follow the instructions at
+  http://python.org/download/.
 
-  You'll also need to have activated access to the Google+ APIs and updated the
-  appengine/app/api/config.json file with your values from
-  https://code.google.com/apis/console > "API Access". See the top-level README
-  for more details.
+  Install Mercurial. You can follow the instructions at
+  http://mercurial.selenic.com/downloads/.
 
-1. Download and install the Google App Engine SDK for Go (at
-  http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Go).
-  Make sure to add the google_appengine/ directory to your $PATH. If you're
-  using bash and the App Engine SDK is installed in the ~/google_appengine
-  directory, you can add it to your $PATH by doing:
+  Install the Google App Engine SDK for Go. You can follow the instructions at
+  http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Go.
+
+2. Add the Google App Engine SDK directory to your $PATH. It's usually named
+  google_appengine/.
+
+  If you're using bash and the Google App Engine SDK directory lives at
+  ~/google_appengine/, you can add it to your $PATH by doing:
 
     > # You can also use ~/.bash_profile instead of ~/.bashrc for these commands.
     > echo '# Google App Engine SDK for Go Environment' >> ~/.bashrc
     > echo 'export PATH=$PATH:$HOME/google_appengine' >> ~/.bashrc
     > source ~/.bashrc
 
-2. In a Terminal, cd into the appengine/ directory (the directory where this
-  README file lives):
+2. In a Terminal, cd into the google-plus-go-starter/appengine/ directory (the
+  directory where this README file lives):
 
     > cd google-plus-go-starter/appengine/
     > ls
@@ -30,7 +31,7 @@ Running the Google+ Go Starter Project for App Engine (on Linux and Mac)
 3. This project depends on the goauth2 (at http://code.google.com/p/goauth2/)
   and google-api-go-client (at http://code.google.com/p/google-api-go-client/)
   Go libraries. To use them on Google App Engine, download them to the
-  appengine/ directory:
+  google-plus-go-starter/appengine/ directory:
 
     > mkdir goauth2.googlecode.com
     > hg clone https://code.google.com/p/goauth2 goauth2.googlecode.com/hg
@@ -44,14 +45,14 @@ Running the Google+ Go Starter Project for App Engine (on Linux and Mac)
     > # Symlink loops cause dev_appserver.py to go crash, so avoid them.
     > ln -s ../../../noauth google-plus-go-starter.googlecode.com/hg/noauth
 
-5. Run the App Engine development server:
+5. Run the App Engine development server (you have to update the values in
+  google-plus-go-starter/appengine/app/api/config.json before starting the
+  development server. See the top-level README for more details):
 
-    > # You have to update the values in appengine/app/api/config.json before starting the development server.
-    > # See the top-level README for more details.
     > dev_appserver.py .
 
 6. Visit http://localhost:8080/ in a browser.
 
----------------------------------------------------------------------------------------
-Having problems? You find help at http://groups.google.com/group/google-plus-developers
+--------------------------------------------------------------------------------------
+Having trouble? You find help at http://groups.google.com/group/google-plus-developers
 
